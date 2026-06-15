@@ -5,7 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel , Field
 from typing import Optional , List , Literal , Annotated , Union
 from dotenv import load_dotenv
-from google import genai
 import os
 from openai import OpenAI
 from models import PulseBlock
@@ -46,11 +45,6 @@ class ScanRequest(BaseModel):
     prompt: str
     image: Optional[str] = None
     contextofChat: List[ChatMessage]
-
-
-
-
-ai_client = genai.Client()    
 
 
 
