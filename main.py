@@ -17,9 +17,6 @@ app = FastAPI()
 
 
 
-@app.get("/")
-def root():
-    return {"message": "Hello World"}
 
 app.add_middleware(
     CORSMiddleware,
@@ -294,6 +291,10 @@ IMPORTANT OUTPUT RULES:
 
 """
 
+
+@app.get("/")
+def root():
+    return {"message": "Hello World"}
 
 
 @app.post('/scan/')
