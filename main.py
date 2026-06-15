@@ -15,6 +15,12 @@ load_dotenv()
 
 app = FastAPI()
 
+
+
+@app.get("/")
+def root():
+    return {"message": "Hello World"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000" , "https://nutri-scan-ai-virid.vercel.app/"],
@@ -288,9 +294,6 @@ IMPORTANT OUTPUT RULES:
 
 """
 
-@app.get("/")
-def root():
-    return {"message": "Hello World"}
 
 
 @app.post('/scan/')
